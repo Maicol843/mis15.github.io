@@ -1,26 +1,25 @@
-// Configuración de partículas en forma de pétalos
-const petalosConfig = {
-    particles: {
-        number: {
-            value: 50,
-            density: {
-                enable: true,
-                value_area: 800
+particlesJS("particles-js", {
+    "particles": {
+        "number": {
+            "value": 100,
+            "density": {
+                "enable": true,
+                "value_area": 800
             }
         },
-        shape: {
-            type: "image",
-            image: {
-                src: "img/petalo.png", // Ruta de la imagen del pétalo
-                width: 100,
-                height: 100
+        "shape": {
+            "type": "image",
+            "image": {
+                "src": "img/petalo.png", // Ruta de la imagen del pétalo
+                "width": 100,
+                "height": 100
             }
         },
-        size: {
-            value: 13,
-            random: true
+        "size": {
+            "value": 13,
+            "random": true
         },
-        move: {
+        "move": {
             "enable": true,
             "speed": 1,
             "direction": "bottom",
@@ -37,18 +36,12 @@ const petalosConfig = {
             "width": 0 // Ancho de las líneas, configurado en 0 para hacerlas transparentes
         }
     },
-    interactivity: {
-        events: {
-            onhover: {
-                enable: true,
-                mode: "repulse"
+    "interactivity": {
+        "events": {
+            "onhover": {
+                "enable": false,
+                "mode": "repulse"
             }
         }
-    },
-    retina_detect: true
-};
-
-// Inicializa Particles.js en cada sección
-particlesJS("particles-js-seccion1", petalosConfig);
-particlesJS("particles-js-seccion2", petalosConfig);
-particlesJS("particles-js-seccion3", petalosConfig);
+    }
+});

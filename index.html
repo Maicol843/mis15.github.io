@@ -11,8 +11,8 @@
         body {
             overflow-x: hidden;
         }
-        
-        section{
+
+        section {
             position: relative;
             z-index: 1; /* Asegura que el contenido esté por encima de las partículas */
             min-height: 100vh;
@@ -128,10 +128,9 @@
     </style>
 </head>
 <body>
-    <!-- Partículas para Sección 1 -->
-    <div id="particles-js-seccion1" class="background-particles"></div>
     <!-- Sección 1 -->
     <section class="seccion1">
+        <div id="particles-js" class="background-particles"></div>
         <h1 class="mt-5 fw-bold fs-1">Mis 15 Años</h1>
         <h2>Liz Condori</h2>
         <p>Hay momentos inolvidables que se atesoran en el corazón para siempre. Por esa razón quiero que compartas conmigo esta noche tan especial para mi...</p>
@@ -139,8 +138,6 @@
         <h5 class="fw-bold">7 de Marzo de 2025</h5>
     </section>
 
-    <!-- Partículas para Sección 2 -->
-    <div id="particles-js-seccion2" class="background-particles"></div>
     <!-- Sección 2 -->
     <section class="seccion2" id="seccion2">
         <h2 class="fw-bold direccion">La misa</h2>
@@ -151,8 +148,6 @@
         <button class="btn btn-danger boton-navegar btn-sm rounded-5" onclick="scrollToSection('seccion3')"><i class="fa-solid fa-angles-down"></i></button>
     </section>
 
-    <!-- Partículas para Sección 3 -->
-    <div id="particles-js-seccion3" class="background-particles"></div>
     <!-- Sección 3 -->
     <section class="seccion3" id="seccion3">
         <h5 class="asistencia">Faltan:</h5>
