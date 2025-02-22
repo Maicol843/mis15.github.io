@@ -14,7 +14,7 @@
 
         section {
             position: relative;
-            z-index: 1; 
+            z-index: 2; 
             min-height: 100vh;
             display: flex;
             flex-direction: column;
@@ -24,8 +24,9 @@
         }
 
         .seccion1 {
-            background: url('img/1.png') no-repeat center center;
+            background: url('img/1.png') no-repeat;
             background-size: 100% 100%;
+            background-position: center;
             color: black;
         }
         .seccion2, .seccion3 {
@@ -49,11 +50,11 @@
 
         .seccion1 p{
             font-family: "Tangerine", serif;
-            font-size: 1.5rem;
+            font-size: 2.5rem;
             line-height: 90%;
         }
 
-        .seccion1 h5{
+        .seccion1 h3{
             font-family: "Pinyon Script", serif;
             color: rgb(188, 19, 86);
         }
@@ -66,7 +67,7 @@
 
         .seccion2 p{
             font-family: "Faustina", serif;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
 
         .seccion2 .direccion{
@@ -139,7 +140,7 @@
         <h2>Liz Condori</h2>
         <p>Hay momentos inolvidables que se atesoran en el corazón para siempre. Por esa razón quiero que compartas conmigo esta noche tan especial para mi...</p>
         <button class="boton-efecto btn btn-danger boton-navegar btn-sm rounded-5" onclick="scrollToSection('seccion2')"><i class="fa-solid fa-angles-down"></i></button>
-        <h5 class="fw-bold">7 de Marzo de 2025</h5>
+        <h3 class="fw-bold">7 de Marzo de 2025</h3>
     </section>
 
     <!-- Sección 2 -->
