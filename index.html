@@ -126,6 +126,10 @@
             bottom: 370px;
         }
 
+        .boton-sonido{
+            z-index: 2;
+        }
+
         audio{
             opacity: 0.5;
         }
@@ -143,6 +147,9 @@
     <!-- Sección 1 -->
     <section class="seccion1">
         <div id="particles-js" class="background-particles"></div>
+        <button id="botonSonido" class="boton-sonido btn btn-outline-dark btn-sm" onclick="toggleSonido()">
+            <i id="iconoSonido" class="fas fa-volume-mute"></i> Activar Sonido
+        </button>
         <h1 class="mt-3 fw-bold">Mis 15 Años</h1>
         <h2 class="fw-bold">Liz</h2>
         <h3 class="texto-intro fw-bold">7 de Marzo de 2025</h3>
@@ -175,7 +182,6 @@
             <source src="sounds/musica.mp3" type="audio/mpeg">
             Tu navegador no soporta la reproducción de audio.
         </audio>
-        <button onclick="habilitarSonido()">Activar Sonido</button>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -188,11 +194,46 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
     <script>
-        function habilitarSonido() {
+        // Función para alternar el sonido
+        function toggleSonido() {
             var audio = document.getElementById('miAudio');
-            audio.muted = false;
-            audio.play();
+            var boton = document.getElementById('botonSonido');
+            var icono = document.getElementById('iconoSonido');
+            
+            if (audio.muted) {
+                audio.muted = false;
+                audio.play();
+                icono.classList.remove('fa-volume-mute');
+                icono.classList.add('fa-volume-up');
+                boton.innerHTML = '<i id="iconoSonido" class="fas fa-volume-up"></i> Sonido Activado';
+            } else {
+                audio.muted = true;
+                icono.classList.remove('fa-volume-up');
+                icono.classList.add('fa-volume-mute');
+                boton.innerHTML = '<i id="iconoSonido" class="fas fa-volume-mute"></i> Activar Sonido';
+            }
         }
+    
+        // Activar sonido automáticamente al cargar la página
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('miAudio');
+            var boton = document.getElementById('botonSonido');
+            var icono = document.getElementById('iconoSonido');
+            
+            // Intenta reproducir el audio automáticamente
+            audio.play().then(() => {
+                audio.muted = false;
+                icono.classList.remove('fa-volume-mute');
+                icono.classList.add('fa-volume-up');
+                boton.innerHTML = '<i id="iconoSonido" class="fas fa-volume-up"></i> Sonido Activado';
+            }).catch((error) => {
+                // Si el navegador bloquea la reproducción automática, se inicia en mute
+                audio.muted = true;
+                icono.classList.remove('fa-volume-up');
+                icono.classList.add('fa-volume-mute');
+                boton.innerHTML = '<i id="iconoSonido" class="fas fa-volume-mute"></i> Activar Sonido';
+            });
+        });
     </script>
 </body>
 </html>
