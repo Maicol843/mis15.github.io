@@ -189,8 +189,11 @@
     <script>
         window.addEventListener('load', function() {
             var audio = document.getElementById('audio');
-            audio.play().catch(function(error) {
-                console.log('Reproducción automática bloqueada. El usuario debe interactuar primero.');
+            audio.muted = true; // Se inicia en silencio para evitar bloqueos
+            audio.play().then(function() {
+                audio.muted = false; // Se reactiva el sonido
+            }).catch(function(error) {
+                console.log('El navegador bloqueó la reproducción automática.');
             });
         });
     </script>
