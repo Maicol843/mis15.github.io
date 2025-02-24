@@ -171,9 +171,11 @@
         </div>
         <p class="fw-bold">No faltes!!!</p>
         <img src="img/princesa.png" alt="princesa" width="200" class="mb-3">
-        <audio id="audio" autoplay loop>
+        <audio id="miAudio" autoplay loop muted>
             <source src="sounds/musica.mp3" type="audio/mpeg">
+            Tu navegador no soporta la reproducción de audio.
         </audio>
+        <button onclick="habilitarSonido()">Activar Sonido</button>
     </section>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -186,15 +188,11 @@
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
     <script src="script.js"></script>
     <script>
-        window.addEventListener('load', function() {
-            var audio = document.getElementById('audio');
-            audio.muted = true; // Se inicia en silencio para evitar bloqueos
-            audio.play().then(function() {
-                audio.muted = false; // Se reactiva el sonido
-            }).catch(function(error) {
-                console.log('El navegador bloqueó la reproducción automática.');
-            });
-        });
+        function habilitarSonido() {
+            var audio = document.getElementById('miAudio');
+            audio.muted = false;
+            audio.play();
+        }
     </script>
 </body>
 </html>
